@@ -23,6 +23,8 @@
 - To convert letters to uppercase
 - Access character in string
 - Separate file content into array
+- random words array index number to display word
 
 ### 6. Array
 - Store list of words
+
