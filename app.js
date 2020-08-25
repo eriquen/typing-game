@@ -1,62 +1,58 @@
-var startButton = document.getElementById("start-button");
-var start = document.getElementById("gamestart"); 
-var finish = document.getElementById("finish");
-var timer = document.getElementById("countdown");
-var score = document.getElementById("score");
-var words;
+let startButton = document.getElementById("start-button");
+let start = document.getElementById("gamestart"); 
+let finish = document.getElementById("finish");
+let timer = document.getElementById("countdown");
+let score = document.getElementById("score");
+let wordCharParent = document.getElementById("word");
+let words;
 
 // Get list of word from words.txt
 fetch('words.txt')
   .then(response => response.text())
   .then(text => {
       words = text;
-})
-
-// wait for start button to be click
-startButton.addEventListener("click", startGame);
-
+}).catch(err => console.log(err))
 
 // function after start button has been click
-function startGame(){
+const startGame = () =>{
     // hide start button
     startButton.style.visibility = "hidden";
-    var wordlist = words.split(',')
+    let wordlist = words.split(',')
     startCountdown();
     testWord = displayWord(wordlist)
-    var w = document.getElementById("word").children;
-    var i = 0;
-    var currentScore = 0;
+    let w = wordCharParent.children;
+    let i = 0;
+    let currentScore = 0;
     
     // listen to user keyboard and compare with actual character
     document.addEventListener('keydown', function(event) {
-        console.log(event.key)
-        console.log(w[i].textContent)
-        console.log("length: " + testWord.length)
-        console.log("index: " + i)
-        
         if(i + 1 != testWord.length){
-            if(event.key.toUpperCase() == w[i].textContent){
-                console.log("same");
-                w[i].classList.add("red"); 
-                i++;
+            
+                if(event.key.toUpperCase() == testWord.charAt(i)){
+                    console.log("same");
+                    w[i].classList.add("red"); 
+                    i++;
+                
             }
         }else if(i + 1 == testWord.length){
-            w[i].classList.add("red");
             currentScore++
             score.textContent = currentScore;
-            document.getElementById("word").innerHTML = '';
+            wordCharParent.innerHTML = '';
             testWord = displayWord(wordlist)
             i = 0;
         }
     });
 }
 
-// timer function
-function startCountdown(){
+// wait for start button to be click
+startButton.addEventListener("click", startGame);
 
-    var current = timer.textContent
+
+// timer function
+const startCountdown = () => {
+    let current = timer.textContent
     start.play();
-    var countdown = setInterval(function() {
+    let countdown = setInterval(function() {
         if (parseInt(timer.textContent) != 0){
         current--;
         timer.textContent = current;
@@ -72,25 +68,24 @@ function startCountdown(){
 }
 
 // append word 
-function displayWord(array_word){
-
+const displayWord = (array_word) =>{
     // randomly select the word
     rand = Math.floor(Math.random() * array_word['length']);
-    var randword = array_word[rand].toUpperCase()
+    let randword = array_word[rand].toUpperCase()
     
-    for(var i = 0; i < randword.length; i ++){
-        var node = document.createElement("LI"); 
-        var textnode = document.createTextNode(randword.charAt(i)); 
+    for(let i = 0; i < randword.length; i ++){
+        let node = document.createElement("LI"); 
+        let textnode = document.createTextNode(randword.charAt(i)); 
         node.appendChild(textnode);
-        document.getElementById("word").appendChild(node);
+        wordCharParent.appendChild(node);
     }
     return randword;
 }
 
 // reset game
-function resetGame(){
-    document.getElementById("countdown").textContent = 10
-    document.getElementById("word").innerHTML = '';
+const resetGame = () =>{
+    timer.textContent = 20
+    wordCharParent.innerHTML = '';
     score.textContent = 0
     startButton.style.visibility = "visible";
     start.currentTime = 0;

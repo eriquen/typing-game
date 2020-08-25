@@ -63,10 +63,10 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 45px;
     height: 50px;
-    width: 50px;
+    width: 35px;
     align-items: center;
     text-align: center;
-    margin: 0 5px;
+    margin-right: 2px;
 }
 
 .start-btn{
