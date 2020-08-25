@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="game-container">
+            <div class="title">
+                <h2>QWERTYUIOP</h2>
+            </div>
+            <div class="game-body">
+                <div class="instruction">
+                    <p>Instruction:<br>Type as many words as you can until the time runs out!</p>
+                </div>
+                <div class="game-info">
+                    <div class="timer">
+                        <p>Timer</p>
+                        <span id="countdown">10</span>
+                    </div>
+                    <div class="score">
+                        <p>Score</p>
+                        <span id="score">0</span id="score">
+                    </div>
+                </div>
+                <div class="start-btn">
+                    <button id="start-button" class="start-button">START</button>
+                </div>
+                <div class="word-question">
+                    <ul id="word" class="word">
+                    </ul>
+                </div>
+            </div>
+
+            <audio id="gamestart">
+                <source src="/soundtrack/gamestart.mp3" type="audio/mpeg">
+            </audio>
+
+            <audio id="finish">
+                <source src="/soundtrack/finish.mp3" type="audio/mpeg">
+            </audio>
+              
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>

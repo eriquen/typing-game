@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    font-weight: 700;
+    
+}
+
+.game-container{
+    width: 40%;
+    height: 380px;
+    margin: 15% auto;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+.game-body{
+    background-color: #fce4ec;
+    padding: 40px 20px;
+    height: 313px;
+}
+.red{
+    background-color: red;
+}
+
+.title{
+    padding: 20px;
+    background-color: #e91e63;
+    text-align: center;
+}
+.title h2{
+    color: #fff;
+    text-align: center;
+}
+
+.instruction{
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.game-info{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.game-info .timer, .game-info .score{
+    padding: 10px;
+    font-size: 23px;
+}
+
+.word{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 20px;
+    justify-content: center;
+}
+.word li{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 45px;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.start-btn{
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    padding: 1rem 2rem;
+    background: #e91e63;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #c2185b;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.99);
+}
