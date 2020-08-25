@@ -27,12 +27,9 @@ const startGame = () =>{
     // listen to user keyboard and compare with actual character
     document.addEventListener('keydown', function(event) {
         if(i + 1 != testWord.length){
-            
-                if(event.key.toUpperCase() == testWord.charAt(i)){
-                    console.log("same");
-                    w[i].classList.add("red"); 
-                    i++;
-                
+            if(event.key.toUpperCase() == testWord.charAt(i)){
+                w[i].classList.add("red"); 
+                i++;
             }
         }else if(i + 1 == testWord.length){
             currentScore++
@@ -56,7 +53,6 @@ const startCountdown = () => {
         if (parseInt(timer.textContent) != 0){
         current--;
         timer.textContent = current;
-        console.log("current count " + current )
         }else{
             clearInterval(countdown);
             finish.play();
@@ -91,5 +87,3 @@ const resetGame = () =>{
     start.currentTime = 0;
     finish.currentTime = 0;
 }
-
-
