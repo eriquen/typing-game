@@ -6,3 +6,4 @@ Used to read file
 ### 2.HTML CSS
 Style webpage
 
+### 3.JavaScript Variable Scope
