@@ -13,7 +13,7 @@
 - local variable and global variable
 
 ### 4. DOM Manipulation
-- Create node eg. "<li><li>"
+- Create node eg. li
 - Create text
 - Append child(Display random word)
 - Empty child(Remove word after user type all the letters)
