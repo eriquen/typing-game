@@ -1,5 +1,7 @@
 # typing-game
 
+## Interface
+![ui](/images/ui.PNG)
 ## Concept
 
 ### 1.Promises 
